@@ -676,7 +676,7 @@ NAN_METHOD(getPixelColor)
 	bitmap = copyMMBitmapFromDisplayInRect(MMSignedRectMake(x, y, 1, 1));
 
 	if (bitmap == NULL) {
-		info.GetReturnValue().Set(Nan::New('#FFFFFF').ToLocalChecked());
+		info.GetReturnValue().Set(Nan::New("FFFFFF").ToLocalChecked());
 	} else {
 		color = MMRGBHexAtPoint(bitmap, 0, 0);
 
@@ -727,10 +727,10 @@ NAN_METHOD(setXDisplayName)
 
 NAN_METHOD(captureScreen)
 {
-	size_t x;
-	size_t y;
-	size_t w;
-	size_t h;
+	int32_t x;
+	int32_t y;
+	int32_t w;
+	int32_t h;
 
 	//If user has provided screen coords, use them!
 	if (info.Length() == 4)
@@ -783,9 +783,9 @@ NAN_METHOD(captureScreen)
 class BMP
 {
 	public:
-		size_t width;
-		size_t height;
-		size_t byteWidth;
+		int32_t width;
+		int32_t height;
+		int32_t byteWidth;
 		uint8_t bitsPerPixel;
 		uint8_t bytesPerPixel;
 		uint8_t *image;
@@ -818,8 +818,8 @@ NAN_METHOD(getColor)
 	MMBitmapRef bitmap;
 	MMRGBHex color;
 
-	size_t x = Nan::To<int32_t>(info[1]).FromJust();
-	size_t y = Nan::To<int32_t>(info[2]).FromJust();
+	int32_t x = Nan::To<int32_t>(info[1]).FromJust();
+	int32_t y = Nan::To<int32_t>(info[2]).FromJust();
 
 	//Get our image object from JavaScript.
 	BMP img = buildBMP(Nan::To<v8::Object>(info[0]).ToLocalChecked());
