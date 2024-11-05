@@ -3,7 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${appData}/../Local/node-gyp/Cache/22.9.0/include/node"
             ],
             "defines": [],
             "macFrameworkPath": [

@@ -1,21 +1,11 @@
 {
-  "variables": {
-        "openssl_fips" : "0" 
-  },
   'targets': [{
     'target_name': 'robotjs',
     'include_dirs': [
-        "<!(node -e \"require('nan')\")"
-    ],
-    
-    'cflags': [
-      '-Wall',
-      '-Wparentheses',
-      '-Winline',
-      '-Wbad-function-cast',
-      '-Wdisabled-optimization'
-    ],
-    
+        "<!@(node -p \"require('node-addon-api').include\")"
+      ],
+    "cflags!": [ "-fno-exceptions" ],
+    "cflags_cc!": [ "-fno-exceptions" ],
     'conditions': [
       ['OS == "mac"', {
         'include_dirs': [
@@ -33,7 +23,6 @@
           ]
         }
       }],
-      
       ['OS == "linux"', {
         'link_settings': {
           'libraries': [
@@ -43,17 +32,14 @@
             '-lXtst'
           ]
         },
-        
         'sources': [
           'src/xdisplay.c'
         ]
       }],
-
       ["OS=='win'", {
         'defines': ['IS_WINDOWS']
       }]
     ],
-    
     'sources': [
       'src/robotjs.cc',
       'src/deadbeef_rand.c',
@@ -64,6 +50,7 @@
       'src/screengrab.c',
       'src/snprintf.c',
       'src/MMBitmap.c'
-    ]
+    ],
+    'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
   }]
 }
