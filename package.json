@@ -36,7 +36,8 @@
   },
   "homepage": "https://github.com/toinane/robotjs",
   "dependencies": {
-    "node-addon-api": "^8.2.1"
+    "node-addon-api": "^8.2.1",
+    "robotjs": "file:"
   },
   "devDependencies": {
     "node-gyp": "^10.2.0"

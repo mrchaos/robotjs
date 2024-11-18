@@ -1,3 +1,8 @@
+# robotjs.node 빌드 (window 64bit)
+  * visual studio community 2022버전 설치
+  * "npm install" 하면 환경에 맞게 자동으로 build가 된다.
+  * 최종 빌드된 "robotjs.node" 경로는 "build\Release\robotjs.node" 이다.
+---
 <p align="center"><img src="https://cldup.com/1ATDf2JMtv.png"></p>
 
 <p align="center"><a href="https://travis-ci.org/octalmage/robotjs"><img src="https://api.travis-ci.org/octalmage/robotjs.svg?branch=master"></a> <a href="https://ci.appveyor.com/project/octalmage/robotjs"><img src="https://ci.appveyor.com/api/projects/status/qh2eqb37j7ap6x36?svg=true"></a> <a href="https://www.npmjs.com/package/robotjs"><img src="https://img.shields.io/npm/v/robotjs.svg"></a> <a href="https://gitter.im/octalmage/robotjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://img.shields.io/badge/gitter-join%20chat-blue.svg"></a> <a href="http://waffle.io/octalmage/robotjs"><img src="https://img.shields.io/waffle/label/octalmage/robotjs/ready.svg?maxAge=3600"></a></p>
